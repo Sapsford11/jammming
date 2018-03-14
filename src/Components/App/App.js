@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import './Components/App/App.css';
+import './App.css';
+import Playlist from '../Playlist/Playlist.js';
+import SearchBar from '../SearchBar/SearchBar.js';
+import SearchResults from '../SearchResults/SearchResults.js';
 
 class App extends Component {
   constructor(props) {
@@ -11,14 +14,16 @@ class App extends Component {
       playlistTracks: []
     }
 
-    addTrack(track) {
-    if (track.id !== this.state.playlistTracks)
-        {
-          this.state.playlistTracks = this.state.playlistTracks.push(track);
-        }
-    }
+  };
 
+  addTrack(track) {
+  if (track.id !== this.state.playlistTracks)
+      {
+        this.state.playlistTracks = this.state.playlistTracks.push(track);
+      }
   }
+
+
   render() {
     return (
       <div>
