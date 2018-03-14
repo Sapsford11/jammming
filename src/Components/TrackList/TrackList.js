@@ -12,8 +12,6 @@ class TrackList extends React.Component {
       key={track.id}
       />
       })
-      <h3>{this.props.track.name}</h3>
-      <p>{this.props.track.artist} | {this.props.track.album}</p>
     </div>
   );
   }
