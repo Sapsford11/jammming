@@ -67,7 +67,6 @@ let Spotify = {
           body: JSON.stringify({ uris: trackURIs })
             }).then(response => response.json()
             ).then(jsonResponse => {
-            let playlist_id = jsonResponse.id;
             });
           })
         });
