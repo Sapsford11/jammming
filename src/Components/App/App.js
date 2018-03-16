@@ -24,8 +24,8 @@ class App extends Component {
 
   addTrack(track){
        for(let i=0; i<this.state.playlistTracks.length; i++){
-         if (this.track.id === this.state.playlistTracks.id){
-            alert('This song is already part of your playlist.')
+         if (track.id === this.state.playlistTracks.id){
+            alert('This song is already part of your playlist.')}
             else this.playlistTracks.push(track);
          }
        }
