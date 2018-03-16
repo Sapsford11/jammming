@@ -23,13 +23,10 @@ class App extends Component {
   }
 
   addTrack(track){
-       let isNew = true;
        for(let i=0; i<this.state.playlistTracks.length; i++){
-         if(isNew){
-         this.playlistTracks.push(track);
-         else (this.track.id === this.state.playlistTracks.id){
-            isNew = false;
+         if (this.track.id === this.state.playlistTracks.id){
             alert('This song is already part of your playlist.')
+            else this.playlistTracks.push(track);
          }
        }
      }
