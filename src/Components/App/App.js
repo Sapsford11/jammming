@@ -22,15 +22,15 @@ class App extends Component {
 
   }
 
-  addTrack(track){
-       for(let i=0; i<this.state.playlistTracks.length; i++){
-         if (track.id === this.state.playlistTracks[i].id){
-            alert('This song is already part of your playlist.')
-          } else {
-              this.playlistTracks.push(track);
-            }
-         }
-       }
+  addTrack(track)    {
+    if (!this.state.playlistTracks.find(t => t.name === track.name))  {
+        let tempList = this.state.playlistTracks.slice();
+        tempList.push(track)
+        this.setState({
+          playlistTracks: tempList
+        });
+      }
+  }
 
   removeTrack(track) {
     this.setState({
