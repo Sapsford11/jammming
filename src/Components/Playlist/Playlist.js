@@ -8,6 +8,7 @@ class Playlist extends React.Component {
     this.handleNameChange = this.handleNameChange.bind(this);
   }
 
+  // Triggers the name change to the playlist.
   handleNameChange(event) {
     this.props.onNameChange(event.target.value);
   }

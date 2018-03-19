@@ -8,6 +8,8 @@ class Track extends React.Component {
     this.removeTrack = this.removeTrack.bind(this);
   }
 
+  /* Adds functionality to the '-' and '+' buttons, the methods
+  addTrack and removeTrack are described below. */
   renderAction() {
     if (this.props.isRemoval)
     return (

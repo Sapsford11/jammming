@@ -22,6 +22,7 @@ class App extends Component {
 
   }
 
+  // Allows a user to add a track to their playlist.
   addTrack(track)    {
     if (!this.state.playlistTracks.find(t => t.name === track.name))  {
         let tempList = this.state.playlistTracks.slice();
@@ -32,18 +33,21 @@ class App extends Component {
       }
   }
 
+  // Allows a user to remove a track from their playlist.
   removeTrack(track) {
     this.setState({
       playlistTracks: this.state.playlistTracks.filter(currentTrack => currentTrack.id !== track.id)
     });
   }
 
+  // Allows user to update the name of the playlist.
   updatePlaylistName(name) {
     this.setState({
       name: name
     })
   }
 
+  // Saves playlist to user's Spotify account.
   savePlaylist() {
       let trackURIs = [];
       this.Spotify.savePlaylist(this.state.playlistName, trackURIs).then(() => {
@@ -54,7 +58,7 @@ class App extends Component {
       });
     }
 
-
+    // Allows a user to enter a search term that will be hooked upto Spotify API.
   search(term) {
     Spotify.search(term).then(searchResults => {
       this.setState({

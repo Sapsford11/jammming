@@ -2,6 +2,7 @@ const clientID = '9dc421eaefbd4e6195484248a7ba4d25';
 const redirectUri = "http://localhost:3000/";
 let accessToken = '';
 
+// Getting a Spotify user's access token.
 let Spotify = {
   getAccessToken() {
     if(accessToken){
@@ -20,6 +21,8 @@ let Spotify = {
     }
   },
 
+    /* Passes the search term value to a Spotify request, then returns the response
+    as a list of tracks in JSON format. */
     search(term) {
       return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
         headers: {
@@ -41,6 +44,7 @@ let Spotify = {
 
     },
 
+    //Writing the learner's custom playlist in Jammming to their Spotify account.
     savePlaylist(playlistName, trackURIs) {
       if(!playlistName || !trackURIs) {
           return;
