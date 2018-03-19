@@ -34,7 +34,7 @@ class App extends Component {
   // Saves playlist to user's Spotify account.
   savePlaylist() {
       let trackURIs = [];
-      this.Spotify.savePlaylist(this.state.playlistName, trackURIs).then(() => {
+      Spotify.savePlaylist(this.state.playlistName, trackURIs).then(() => {
         this.setState({
           playlistName: 'New Playlist',
           searchResults: []

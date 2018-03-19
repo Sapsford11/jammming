@@ -35,7 +35,7 @@ render() {
       <h3>{this.props.track.name}</h3>
       <p>{this.props.track.artist} | {this.props.track.album}</p>
     </div>
-     {this.renderAction}
+     {this.renderAction()}
   </div>
 );
 }
