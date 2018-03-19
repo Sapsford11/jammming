@@ -48,7 +48,7 @@ let Spotify = {
 
     },
 
-    //Writing the learner's custom playlist in Jammming to their Spotify account.
+    //Writing the user's custom playlist in Jammming to their Spotify account.
     savePlaylist(playlistName, trackURIs) {
       if(!playlistName || !trackURIs) {
           return;
