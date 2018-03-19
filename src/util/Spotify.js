@@ -40,6 +40,9 @@ let Spotify = {
             uri: track.uri
           }));
         }
+        else {
+          return [];
+        }
       });
 
     },

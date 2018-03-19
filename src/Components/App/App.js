@@ -24,9 +24,9 @@ class App extends Component {
 
   // Allows a user to enter a search term that will be hooked upto Spotify API.
   search(term) {
-    Spotify.search(term).then(spotifyTracks => {
+    Spotify.search(term).then(spotifySearch => {
       this.setState({
-        searchResults: spotifyTracks
+        searchResults: spotifySearch
       });
     });
   }
