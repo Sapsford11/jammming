@@ -7,7 +7,7 @@ class Playlist extends React.Component {
   constructor(props) {
     super(props);
     this.handleNameChange = this.handleNameChange.bind(this);
-    this.handleClick = this.handleCLick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     this.state = { isOpen: false };
   }
 
