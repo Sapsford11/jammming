@@ -4,7 +4,6 @@ import Playlist from '../Playlist/Playlist';
 import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
 import Spotify from '../../util/Spotify';
-import Modal from '../Modal/Modal';
 
 class App extends Component {
   constructor(props) {
@@ -39,7 +38,6 @@ class App extends Component {
           playlistTracks: []
         });
       });
-      console.log("Your playlist was successfully saved.")
     }
 
   // Allows a user to add a track to their playlist.
