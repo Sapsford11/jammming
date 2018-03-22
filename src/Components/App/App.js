@@ -4,6 +4,7 @@ import Playlist from '../Playlist/Playlist';
 import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
 import Spotify from '../../util/Spotify';
+import Modal from '../Modal/Modal';
 
 class App extends Component {
   constructor(props) {
@@ -24,10 +25,8 @@ class App extends Component {
 
   // Allows a user to enter a search term that will be hooked upto Spotify API.
   search(term) {
-    Spotify.search(term).then(spotifySearch => {
-      this.setState({
-        searchResults: spotifySearch
-      });
+    Spotify.search(term).then(searchResults => {
+      this.setState({ searchResults });
     });
   }
 
@@ -37,19 +36,17 @@ class App extends Component {
       Spotify.savePlaylist(this.state.playlistName, trackURIs).then(() => {
         this.setState({
           playlistName: 'New Playlist',
-          searchResults: []
+          playlistTracks: []
         });
       });
+      console.log("Your playlist was successfully saved.")
     }
 
   // Allows a user to add a track to their playlist.
   addTrack(track)    {
-    if (!this.state.playlistTracks.find(t => t.name === track.name))  {
-        let tempList = this.state.playlistTracks.slice();
-        tempList.push(track)
-        this.setState({
-          playlistTracks: tempList
-        });
+    if (!this.state.playlistTracks.find(t => t.id === track.id))  {
+      let playlistTracks = this.state.playlistTracks.concat(track);
+      this.setState( { playlistTracks } );
       }
   }
 
