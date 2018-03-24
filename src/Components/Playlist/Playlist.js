@@ -8,6 +8,7 @@ class Playlist extends React.Component {
     super(props);
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
     this.state = { isOpen: false };
   }
 
@@ -23,8 +24,8 @@ class Playlist extends React.Component {
   }
 
   handleClick() {
-    this.props.onSave();
     this.toggleModal();
+    this.props.onSave();
   }
 
   render() {
