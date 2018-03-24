@@ -34,8 +34,7 @@ class Playlist extends React.Component {
       <input value={this.props.playlistName} onChange={this.handleNameChange}/>
       <TrackList tracks={this.props.playlistTracks} onRemove={this.props.onRemove} isRemoval={true}/>
       <a className="Playlist-save" onClick={this.handleClick}>SAVE TO SPOTIFY</a>
-      <Modal show={this.state.isOpen} onClose={this.toggleModal}>
-        <p>Your playlist was saved successfully</p>
+      <Modal show={this.state.isOpen} onClose={this.toggleModal} playlistName={this.props.playlistName}>
       </Modal>
       </div>
     );

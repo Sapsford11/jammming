@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Modal.css';
 
 class Modal extends React.Component {
   render() {
@@ -13,7 +12,7 @@ class Modal extends React.Component {
 
     return (
       <div className="modal">
-      <h3 className="seperator">{`Your playlist ${this.props.playlistName} was saved successfully!`}</h3>
+      <h3 className="seperator">{`Your playlist '${this.props.playlistName}' was saved successfully!`}</h3>
           <button className="close-button" onClick={this.props.onClose}>OK</button>
       </div>
     );
